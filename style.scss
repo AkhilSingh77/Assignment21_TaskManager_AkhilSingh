@@ -2,3 +2,7 @@
 @import "scss-components/leftPart";
 @import "scss-components/colors";
 @import "scss-components/boilerplate";
+
+.mainwrapper{
+  @include flexRow();
+}

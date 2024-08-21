@@ -4,7 +4,20 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 p,input{
   margin: 0;
   padding: 0;
+}
+
+input , select{
+  outline: none;
+}
+
+button{
+  border: none;
+  outline: none;
 }

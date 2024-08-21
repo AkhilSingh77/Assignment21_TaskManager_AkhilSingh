@@ -1,0 +1,33 @@
+@import "function";
+
+@mixin paddingLeftRightSame($value){
+  padding-left: pxtorem( $value);
+  padding-right: pxtorem( $value);
+};
+
+@mixin flexColumn($justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flexRow($justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin paddingTopBottomSame($value){
+  padding-top: pxtorem( $value) ;
+  padding-bottom: pxtorem( $value);
+};
+@mixin paddingTopBottomDifferent($topValue,$bottomValue){
+  padding-top: pxtorem($topValue) ;
+  padding-bottom: pxtorem( $bottomValue);
+};
+
+@mixin borderAndRadius($value:1px solid rgb(207, 204, 204), $radius:5px){
+  border: $value;
+  border-radius: $radius;
+}

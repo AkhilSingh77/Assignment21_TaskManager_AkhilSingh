@@ -1,7 +1,92 @@
 @import "colors";
+@import "function";
+@import "mixin";
 
-.mainwrapper__left{
+.mainwrapper__left {
   width: 35%;
   height: 100vh;
-  background-color:$leftPart-color ;
+  background-color: $leftPart-color;
+  padding-top: pxtorem(100px);
+
+  @include paddingLeftRightSame(25px);
+
+  .leftwrapper {
+   
+    background-color: beige;
+    &__form {
+      @include flexColumn();
+      gap: pxtorem(20px);
+
+      &__titleContainer , &__categoryContainer ,&__descriptionContainer {
+          @include flexColumn();
+
+      }
+
+      .titleContainer{
+        &--input{
+        @include paddingTopBottomSame(8px);
+        padding-left: pxtorem(10px);
+        @include borderAndRadius();
+        }
+      }
+      .descriptionContainer {
+        &--input{
+       @include paddingTopBottomDifferent(8px,28px);
+        padding-left: pxtorem(10px);
+        @include borderAndRadius();
+        }
+      }
+
+      .duePriorityContainer{
+        @include flexRow(space-between);
+       gap: pxtorem(20px);
+       &__left , &__right{
+        @include flexColumn();
+   
+       }
+
+       &__left{
+        width: 50%;
+        &--input{
+          @include paddingTopBottomSame(8px);
+          @include borderAndRadius();
+          padding-left: pxtorem(5px);
+         
+        }
+       }
+
+      &__right{
+      width: 50%;
+      &__select{
+        @include paddingTopBottomSame(8px);
+        @include borderAndRadius();
+        padding-left: pxtorem(5px);
+      }
+      }
+      }
+
+      .categoryContainer{
+
+        &__inputContainer{
+          background-color: white;
+          @include borderAndRadius();
+        @include flexRow(space-between);
+        @include paddingTopBottomSame(4px);
+        @include paddingLeftRightSame(5px);
+
+        &__select{
+          border: none;
+          width: 40%;
+        }
+        }
+      }
+
+      &--button{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        @include paddingTopBottomSame(10px);
+        border-radius: pxtorem(5px);
+      }
+    }
+  }
 }
