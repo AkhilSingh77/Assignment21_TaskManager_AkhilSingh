@@ -4,8 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div>hii</div>
+  <body class="mainwrapper">
+    <div class="mainwrapper__left leftwrapper">
+      <form action="" class="leftwrapper__form">
+        <div class="leftwrapper__form__titleContainer titleContainer">
+          <label for="title" class="titleContainer--title">Task Title</label>
+          <input
+            type="text"
+            class="titleContainer--input"
+            placeholder="Enter Task Title"
+            id="title"
+            name="title"
+          />
+        </div>
+        <div
+          class="leftwrapper__form__descriptionContainer descriptionContainer"
+        >
+          <label for="description" class="descriptionContainer--title"
+            >Task Title</label
+          >
+          <input
+            type="text"
+            class="descriptionContainer--input"
+            placeholder="description..."
+            id="description"
+            name="description"
+          />
+        </div>
+        <div
+          class="leftwrapper__form__duePriorityContainer duePriorityContainer"
+        >
+          <div class="duePriorityContainer__left">
+            <label for="duedate" class="duePriorityContainer__left--duedate"
+              >Due Date</label
+            >
+            <input
+              type="date"
+              id="duedate"
+              class="duePriorityContainer__left--input"
+            />
+          </div>
+          <div class="duePriorityContainer__right">
+            <label for="priority" class="duePriorityContainer__right--priority"
+              >Priority</label
+            >
+            <select class="duePriorityContainer__right__select" id="priority">
+              <option
+                value=""
+                class="duePriorityContainer__right__select--option"
+              >
+                High Priority
+              </option>
+              <option
+                value=""
+                class="duePriorityContainer__right__select--option"
+              >
+                Medium
+              </option>
+              <option
+                value=""
+                class="duePriorityContainer__right__select--option"
+              >
+                Low Priority
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="leftwrapper__form__categoryContainer categoryContainer">
+          <label for="category">Categories</label>
+        </div>
+        <button>Add</button>
+      </form>
+    </div>
+    <div class="mainwrapper__right">hii</div>
   </body>
 </html>

@@ -1,1 +1,16 @@
-/*# sourceMappingURL=style.css.map */
+.mainwrapper__left {
+  width: 35%;
+  height: 100vh;
+  background-color: rgb(156, 241, 251);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p, input {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=style.css.map */
