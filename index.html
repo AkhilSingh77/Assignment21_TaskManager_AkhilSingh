@@ -22,13 +22,14 @@
               placeholder="Enter Task Title"
               id="title"
               name="title"
+              required
             />
           </div>
           <div
             class="leftwrapper__form__descriptionContainer descriptionContainer"
           >
             <label for="description" class="descriptionContainer--title"
-              >Task Title</label
+              >Task Description</label
             >
             <input
               type="text"
@@ -36,6 +37,7 @@
               placeholder="description..."
               id="description"
               name="description"
+              required
             />
           </div>
           <div
@@ -49,6 +51,7 @@
                 type="date"
                 id="duedate"
                 class="duePriorityContainer__left--input"
+                required
               />
             </div>
             <div class="duePriorityContainer__right">
@@ -62,16 +65,22 @@
                   value=""
                   class="duePriorityContainer__right__select--option"
                 >
+                  Select Priority
+                </option>
+                <option
+                  value="High Priority"
+                  class="duePriorityContainer__right__select--option"
+                >
                   High Priority
                 </option>
                 <option
-                  value=""
+                  value="Medium"
                   class="duePriorityContainer__right__select--option"
                 >
                   Medium
                 </option>
                 <option
-                  value=""
+                  value="Low Priority"
                   class="duePriorityContainer__right__select--option"
                 >
                   Low Priority
@@ -82,14 +91,9 @@
           <div class="leftwrapper__form__categoryContainer categoryContainer">
             <label for="category">Categories</label>
             <div class="categoryContainer__inputContainer">
-              <div class="categoryContainer__inputContainer__tagContainer">
-                <div
-                  class="categoryContainer__inputContainer__tagContainer__tag tag"
-                >
-                  <span class="tag--name">Work</span>
-                  <i class="fa-regular fa-circle-xmark tag--cross"></i>
-                </div>
-              </div>
+              <div
+                class="categoryContainer__inputContainer__tagContainer"
+              ></div>
               <select
                 name="category"
                 id="category"
@@ -100,6 +104,12 @@
                   class="categoryContainer__inputContainer__select--option"
                 >
                   Select Category...
+                </option>
+                <option
+                  value="work"
+                  class="categoryContainer__inputContainer__select--option"
+                >
+                  work
                 </option>
                 <option
                   value="personal"
@@ -119,6 +129,7 @@
           <button class="leftwrapper__form--button">Add</button>
         </form>
       </div>
+      <div class="mainwrapper__left--message">Please fill All the Fields</div>
     </div>
     <div class="mainwrapper__right">
       <h1 class="mainwrapper__right--heading">Task Manager</h1>
@@ -215,43 +226,8 @@
           </div>
         </div>
       </div>
-      <div class="mainwrapper__right__taskContainer taskContainer">
-        <div class="taskContainer__singleTaskContainer">
-          <input
-            type="checkbox"
-            class="taskContainer__singleTaskContainer--checkbox"
-          />
-          <div class="taskContainer__singleTaskContainer__middle middlePart">
-            <h3 class="middlePart--heading">Webpack Assignment</h3>
-            <div class="middlePart__datePriorityContainer">
-              <div class="middlePart__datePriorityContainer--date">
-                Thu May 12 2024
-              </div>
-              <div class="middlePart__datePriorityContainer--separation">|</div>
-              <div class="middlePart__datePriorityContainer--deadline">
-                12:10 in the afternoon
-              </div>
-              <div class="middlePart__datePriorityContainer--separation">|</div>
-
-              <div class="middlePart__datePriorityContainer--priority">
-                High Priority
-              </div>
-            </div>
-            <div class="middlePart__tagContainer">
-              <div class="middlePart__tagContainer--tag">Work</div>
-              <div class="middlePart__tagContainer--tag"></div>
-              Personal
-            </div>
-            <div class="middlePart--content">
-              At its core, webpack is a static module bundler for modern
-              JavaScript applications. When webpack processes your application.
-            </div>
-          </div>
-          <div class="taskContainer__singleTaskContainer__imgContainer">
-            <i class="fa-regular fa-trash-can"></i>
-          </div>
-        </div>
-      </div>
+      <div class="mainwrapper__right__taskContainer taskContainer"></div>
     </div>
+    <script src="dist/output.js"></script>
   </body>
 </html>

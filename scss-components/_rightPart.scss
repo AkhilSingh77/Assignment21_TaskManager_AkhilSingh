@@ -71,6 +71,8 @@
   }
 
   .taskContainer{
+    @include flexColumn();
+    gap: pxtorem(10px);
     // background-color: antiquewhite;
     &__singleTaskContainer{
       @include paddingLeftRightSame(12px);
@@ -84,6 +86,9 @@
       }
 
       .middlePart{
+       
+       flex-grow: 1;
+     
         @include flexColumn(); 
         gap: pxtorem(5px);
       //   &--heading{

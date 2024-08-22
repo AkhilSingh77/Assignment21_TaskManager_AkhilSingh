@@ -75,12 +75,20 @@
         @include paddingLeftRightSame(5px);
 
         &__tagContainer{
+         width: 100%;
+        
+         @include flexRow();
+         flex-wrap: wrap;
+         gap: pxtorem(4px);
           .tag{
+            @include flexRow(center,center);
+            gap: pxtorem(4px);
             background-color: $tag-color;
             border-radius: pxtorem(12px);
             @include paddingLeftRightSame(5px);
             @include paddingTopBottomSame(3px);
             font-size: smaller;
+            width: fit-content;
           }
         }
         &__select{
@@ -97,5 +105,17 @@
         border-radius: pxtorem(5px);
       }
     }
+
+   
+ 
   }
+  &--message{
+      color: red;
+      display: none;
+  }
+}
+
+
+.show-message{
+  display: block;
 }
