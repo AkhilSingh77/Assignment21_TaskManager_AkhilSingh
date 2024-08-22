@@ -74,6 +74,15 @@
         @include paddingTopBottomSame(4px);
         @include paddingLeftRightSame(5px);
 
+        &__tagContainer{
+          .tag{
+            background-color: $tag-color;
+            border-radius: pxtorem(12px);
+            @include paddingLeftRightSame(5px);
+            @include paddingTopBottomSame(3px);
+            font-size: smaller;
+          }
+        }
         &__select{
           border: none;
           width: 40%;

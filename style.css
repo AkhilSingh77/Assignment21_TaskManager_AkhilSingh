@@ -82,6 +82,15 @@
   padding-left: 0.3125rem;
   padding-right: 0.3125rem;
 }
+.mainwrapper__left .leftwrapper__form .categoryContainer__inputContainer__tagContainer .tag {
+  background-color: rgb(0, 140, 255);
+  border-radius: 0.75rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
+  font-size: smaller;
+}
 .mainwrapper__left .leftwrapper__form .categoryContainer__inputContainer__select {
   border: none;
   width: 40%;
@@ -116,6 +125,135 @@ input, select {
 button {
   border: none;
   outline: none;
+}
+
+h3, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.mainwrapper__right {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1.25rem;
+  width: 65%;
+}
+.mainwrapper__right .topContainer {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.3125rem;
+  width: 100%;
+}
+.mainwrapper__right .topContainer__searchContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+}
+.mainwrapper__right .topContainer__searchContainer--input {
+  border: 1px solid rgb(207, 204, 204);
+  border-radius: 5px;
+  padding-left: 0.9375rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+.mainwrapper__right .topContainer__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.5625rem;
+}
+.mainwrapper__right .topContainer__bottom__filterCategory, .mainwrapper__right .topContainer__bottom__sortContainer, .mainwrapper__right .topContainer__bottom__filterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.mainwrapper__right .topContainer__bottom__filterCategory {
+  width: 60%;
+}
+.mainwrapper__right .topContainer__bottom__filterCategory .filterContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  border: 1px solid rgb(207, 204, 204);
+  border-radius: 5px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.3125rem;
+}
+.mainwrapper__right .topContainer__bottom__filterCategory .filterContainer__tagcontainer .tagRight {
+  background-color: rgb(0, 140, 255);
+  border-radius: 0.75rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
+  font-size: smaller;
+}
+.mainwrapper__right .topContainer__bottom__filterCategory .filterContainer__select {
+  width: 40%;
+  outline: none;
+  border: none;
+}
+.mainwrapper__right .topContainer__bottom__sortContainer, .mainwrapper__right .topContainer__bottom__filterContainer {
+  width: 20%;
+}
+.mainwrapper__right .topContainer__bottom__sortContainer__select, .mainwrapper__right .topContainer__bottom__filterContainer__select {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid rgb(207, 204, 204);
+  border-radius: 5px;
+  padding-left: 0.3125rem;
+}
+.mainwrapper__right .taskContainer__singleTaskContainer {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid rgb(207, 204, 204);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.mainwrapper__right .taskContainer__singleTaskContainer--checkbox {
+  scale: 1.2;
+}
+.mainwrapper__right .taskContainer__singleTaskContainer .middlePart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.3125rem;
+}
+.mainwrapper__right .taskContainer__singleTaskContainer .middlePart__datePriorityContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.625rem;
+}
+.mainwrapper__right .taskContainer__singleTaskContainer .middlePart__tagContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.4375rem;
 }
 
 .mainwrapper {

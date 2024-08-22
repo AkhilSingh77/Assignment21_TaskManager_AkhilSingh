@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
   </head>
   <body class="mainwrapper">
     <div class="mainwrapper__left">
@@ -82,7 +86,8 @@
                 <div
                   class="categoryContainer__inputContainer__tagContainer__tag tag"
                 >
-                  Work
+                  <span class="tag--name">Work</span>
+                  <i class="fa-regular fa-circle-xmark tag--cross"></i>
                 </div>
               </div>
               <select
@@ -117,8 +122,136 @@
     </div>
     <div class="mainwrapper__right">
       <h1 class="mainwrapper__right--heading">Task Manager</h1>
-      <div class="mainwrapper__right__filterContainer filterContainer"></div>
-      <div class="mainwrapper__right__taskContainer"></div>
+      <div class="mainwrapper__right__filterContainer topContainer">
+        <div class="topContainer__searchContainer">
+          <label for="search" class="topContainer__searchContainer--search"
+            >Search</label
+          >
+          <input
+            type="text"
+            placeholder="Search from Title, description..."
+            id="search"
+            class="topContainer__searchContainer--input"
+          />
+        </div>
+        <div class="topContainer__bottom">
+          <div class="topContainer__bottom__filterCategory">
+            <label
+              for="category"
+              class="topContainer__bottom__filterCategory--label"
+              >Filter by Categories</label
+            >
+            <div class="topContainer__bottom__filterCategory filterContainer">
+              <div class="filterContainer__tagcontainer">
+                <div class="filterContainer__tagcontainer__tags tagRight">
+                  <span class="tagRight--name">Work</span>
+                  <i class="fa-regular fa-circle-xmark tagright--cross"></i>
+                </div>
+              </div>
+              <select
+                name="category"
+                id="category"
+                class="filterContainer__select"
+              >
+                <option value="" class="filterContainer__select--value">
+                  Select Category...
+                </option>
+                <option value="Work" class="filterContainer__select--value">
+                  Work
+                </option>
+                <option value="Personal" class="filterContainer__select--value">
+                  Personal
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="topContainer__bottom__sortContainer">
+            <label for="sort" class="topContainer__bottom__sortContainer--sort"
+              >Sort by priority</label
+            >
+            <select
+              name="sort"
+              id="sort"
+              class="topContainer__bottom__sortContainer__select"
+            >
+              <option
+                value=""
+                class="topContainer__bottom__sortContainer__select--value"
+              >
+                Low to High
+              </option>
+              <option
+                value=""
+                class="topContainer__bottom__sortContainer__select--value"
+              >
+                High to Low
+              </option>
+            </select>
+          </div>
+          <div class="topContainer__bottom__filterContainer">
+            <label
+              for="filter"
+              class="topContainer__bottom__filterContainer--filter"
+              >Filter</label
+            >
+            <select
+              name="filter"
+              id="filter"
+              class="topContainer__bottom__filterContainer__select"
+            >
+              <option
+                value=""
+                class="topContainer__bottom__filterContainer__select--value"
+              >
+                Completed Task
+              </option>
+              <option
+                value=""
+                class="topContainer__bottom__filterContainer__select--value"
+              >
+                Uncompleted Tasks
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="mainwrapper__right__taskContainer taskContainer">
+        <div class="taskContainer__singleTaskContainer">
+          <input
+            type="checkbox"
+            class="taskContainer__singleTaskContainer--checkbox"
+          />
+          <div class="taskContainer__singleTaskContainer__middle middlePart">
+            <h3 class="middlePart--heading">Webpack Assignment</h3>
+            <div class="middlePart__datePriorityContainer">
+              <div class="middlePart__datePriorityContainer--date">
+                Thu May 12 2024
+              </div>
+              <div class="middlePart__datePriorityContainer--separation">|</div>
+              <div class="middlePart__datePriorityContainer--deadline">
+                12:10 in the afternoon
+              </div>
+              <div class="middlePart__datePriorityContainer--separation">|</div>
+
+              <div class="middlePart__datePriorityContainer--priority">
+                High Priority
+              </div>
+            </div>
+            <div class="middlePart__tagContainer">
+              <div class="middlePart__tagContainer--tag">Work</div>
+              <div class="middlePart__tagContainer--tag"></div>
+              Personal
+            </div>
+            <div class="middlePart--content">
+              At its core, webpack is a static module bundler for modern
+              JavaScript applications. When webpack processes your application.
+            </div>
+          </div>
+          <div class="taskContainer__singleTaskContainer__imgContainer">
+            <i class="fa-regular fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
