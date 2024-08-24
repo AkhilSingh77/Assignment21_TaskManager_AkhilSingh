@@ -3,119 +3,142 @@
 @import "mixin";
 
 .mainwrapper__left {
-  width: 35%;
-  height: 100vh;
+  width: 100%;
+ 
   background-color: $leftPart-color;
-  padding-top: pxtorem(100px);
-
-  @include paddingLeftRightSame(25px);
+  padding-top: pxtorem(10px);
+  padding-bottom: pxtorem(10px);
+  @include flexColumn();
+  @include paddingLeftRightSame(15px);
+  @media (min-width:649px) {
+    
+    @include flexColumn(center,flex-start);
+    width: 35%;
+    padding-top: pxtorem(40px);
+    @include paddingLeftRightSame(25px);
+    padding-bottom: pxtorem(0px);
+  }
 
   .leftwrapper {
-   
-    background-color: beige;
+ 
+
+    width: 100%;
     &__form {
       @include flexColumn();
-      gap: pxtorem(20px);
-
-      &__titleContainer , &__categoryContainer ,&__descriptionContainer {
-          @include flexColumn();
-
+      gap: pxtorem(10px);
+      @media (min-width:649px) {
+     gap: pxtorem(15px);
       }
 
-      .titleContainer{
-        &--input{
-        @include paddingTopBottomSame(8px);
-        padding-left: pxtorem(10px);
-        @include borderAndRadius();
+      &__titleContainer,
+      &__categoryContainer,
+      &__descriptionContainer {
+        @include flexColumn();
+      }
+
+      .titleContainer {
+        &--input {
+          @include paddingTopBottomSame(8px);
+          padding-left: pxtorem(10px);
+          @include borderAndRadius();
         }
       }
       .descriptionContainer {
-        &--input{
-       @include paddingTopBottomDifferent(8px,28px);
-        padding-left: pxtorem(10px);
-        @include borderAndRadius();
+        &--input {
+          @include paddingTopBottomDifferent(8px, 28px);
+          padding-left: pxtorem(10px);
+          @include borderAndRadius();
         }
       }
 
-      .duePriorityContainer{
-        @include flexRow(space-between);
-       gap: pxtorem(20px);
-       &__left , &__right{
-        @include flexColumn();
-   
-       }
-
-       &__left{
-        width: 50%;
-        &--input{
-          @include paddingTopBottomSame(8px);
-          @include borderAndRadius();
-          padding-left: pxtorem(5px);
-         
+      .duePriorityContainer {
+        @include flexRow();
+        gap: pxtorem(20px);
+        @media (min-width:649px) {
+          @include flexColumn();
         }
-       }
+        @media (min-width:pxtorem(850px)) {
+          @include flexRow(space-between);  
+        }
+        &__left,
+        &__right {
+          @include flexColumn();
+      
+        }
 
-      &__right{
-      width: 50%;
-      &__select{
-        @include paddingTopBottomSame(8px);
-        @include borderAndRadius();
-        padding-left: pxtorem(5px);
-      }
-      }
-      }
-
-      .categoryContainer{
-
-        &__inputContainer{
-          background-color: white;
-          @include borderAndRadius();
-        @include flexRow(space-between);
-        @include paddingTopBottomSame(4px);
-        @include paddingLeftRightSame(5px);
-
-        &__tagContainer{
-         width: 100%;
-        
-         @include flexRow();
-         flex-wrap: wrap;
-         gap: pxtorem(4px);
-          .tag{
-            @include flexRow(center,center);
-            gap: pxtorem(4px);
-            background-color: $tag-color;
-            border-radius: pxtorem(12px);
-            @include paddingLeftRightSame(5px);
-            @include paddingTopBottomSame(3px);
-            font-size: smaller;
-            width: fit-content;
+        &__left {
+          width: 100%;
+          &--input {
+            @include paddingTopBottomSame(8px);
+            @include borderAndRadius();
+            padding-left: pxtorem(5px);
           }
         }
-        &__select{
-          border: none;
-          width: 40%;
-        }
+
+        &__right {
+          width: 100%;
+          &__select {
+            @include paddingTopBottomSame(8px);
+            @include borderAndRadius();
+            padding-left: pxtorem(5px);
+          }
         }
       }
 
-      &--button{
+      .categoryContainer {
+        &__inputContainer {
+          background-color: white;
+          @include borderAndRadius();
+          @include flexRow(space-between);
+          @include paddingTopBottomSame(4px);
+          @include paddingLeftRightSame(5px);
+
+          &__tagContainer {
+            width: 60%;
+           
+            @include flexRow();
+            flex-wrap: wrap;
+            gap: pxtorem(4px);
+            .tag {
+              @include flexRow(center, center);
+              gap: pxtorem(4px);
+              background-color: $tag-color;
+              border-radius: pxtorem(12px);
+              @include paddingLeftRightSame(5px);
+              @include paddingTopBottomSame(3px);
+              font-size: smaller;
+              width: fit-content;
+
+              .tag--cross:hover{
+               
+              cursor: pointer;
+              scale: 1.05;
+             
+              }
+            }
+          }
+          &__select {
+            border: none;
+            width: 80%;
+          
+          }
+        }
+      }
+
+      &--button {
         background-color: rgb(0, 0, 0);
         color: white;
         @include paddingTopBottomSame(10px);
         border-radius: pxtorem(5px);
       }
     }
-
-   
- 
   }
-  &--message{
-      color: red;
-      display: none;
+  &--message {
+    color: red;
+    display: none;
   }
 }
 
-
-.show-message{
+.show-message {
   display: block;
 }

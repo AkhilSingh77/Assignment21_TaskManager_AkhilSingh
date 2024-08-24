@@ -5,5 +5,20 @@
 @import "scss-components/rightPart";
 
 .mainwrapper{
-  @include flexRow();
+  @include flexColumn();
+
+  @media (min-width:649px) {
+    @include flexRow(); 
+    height: 100vh;
+  }
+}
+
+.high-priority{
+  color: $high-priority;
+}
+.medium-priority{
+  color: $medium-priority;
+}
+.low-priority{
+  color: $low-priority;
 }

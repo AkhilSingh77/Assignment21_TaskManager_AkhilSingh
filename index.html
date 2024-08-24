@@ -126,7 +126,7 @@
               </select>
             </div>
           </div>
-          <button class="leftwrapper__form--button">Add</button>
+          <button class="leftwrapper__form--button" type="submit">Add</button>
         </form>
       </div>
       <div class="mainwrapper__left--message">Please fill All the Fields</div>
@@ -153,12 +153,7 @@
               >Filter by Categories</label
             >
             <div class="topContainer__bottom__filterCategory filterContainer">
-              <div class="filterContainer__tagcontainer">
-                <div class="filterContainer__tagcontainer__tags tagRight">
-                  <span class="tagRight--name">Work</span>
-                  <i class="fa-regular fa-circle-xmark tagright--cross"></i>
-                </div>
-              </div>
+              <div class="filterContainer__tagcontainer"></div>
               <select
                 name="category"
                 id="category"
@@ -167,11 +162,17 @@
                 <option value="" class="filterContainer__select--value">
                   Select Category...
                 </option>
-                <option value="Work" class="filterContainer__select--value">
+                <option value="work" class="filterContainer__select--value">
                   Work
                 </option>
-                <option value="Personal" class="filterContainer__select--value">
+                <option value="personal" class="filterContainer__select--value">
                   Personal
+                </option>
+                <option
+                  value="professional"
+                  class="filterContainer__select--value"
+                >
+                  professional
                 </option>
               </select>
             </div>
@@ -186,13 +187,19 @@
               class="topContainer__bottom__sortContainer__select"
             >
               <option
-                value=""
+                value="Same"
+                class="topContainer__bottom__sortContainer__select--value"
+              >
+                No Priority
+              </option>
+              <option
+                value="Low-to-high"
                 class="topContainer__bottom__sortContainer__select--value"
               >
                 Low to High
               </option>
               <option
-                value=""
+                value="High-to-low"
                 class="topContainer__bottom__sortContainer__select--value"
               >
                 High to Low
@@ -214,10 +221,17 @@
                 value=""
                 class="topContainer__bottom__filterContainer__select--value"
               >
+                All Task
+              </option>
+
+              <option
+                value="Completed"
+                class="topContainer__bottom__filterContainer__select--value"
+              >
                 Completed Task
               </option>
               <option
-                value=""
+                value="Uncompleted"
                 class="topContainer__bottom__filterContainer__select--value"
               >
                 Uncompleted Tasks
