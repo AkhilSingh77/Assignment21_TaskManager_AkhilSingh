@@ -20,11 +20,10 @@ let categoryRightArray = [];
 let afterAllEditInCard = [];
 let beforeSortingArray = [];
 let isChanged = false;
-let catagoryDeleted = '';
+let catagoryDeleted = false;
 const stringArray = localStorage.getItem('allTask');
 if (stringArray !== null) {
     alltaskArray = JSON.parse(stringArray);
-    alltaskArray.reverse();
     afterAllEditInCard = [...alltaskArray];
     beforeSortingArray = [...afterAllEditInCard];
 }
@@ -132,26 +131,27 @@ selectCategoryRightElement.addEventListener('change', (e) => {
 function categoryFilterFunction(afterSortPriorityArray) {
     let categoryValue = selectCategoryRightElement.value;
     if (categoryValue !== '') {
-        if (catagoryDeleted === '') {
-            if (categoryRightArray.length === 0) {
+        if (categoryRightArray.length === 0) {
+            categoryRightArray.push(categoryValue);
+        }
+        else {
+            if (categoryRightArray.indexOf(categoryValue) === -1) {
                 categoryRightArray.push(categoryValue);
-            }
-            else {
-                if (categoryRightArray.indexOf(categoryValue) === -1) {
-                    categoryRightArray.push(categoryValue);
-                }
             }
         }
         filterTagContainerRight.innerHTML = '';
-        categoryRightArray.forEach((tag) => {
-            createTagsRight(tag);
-        });
-        const afterTagsArray = afterSortPriorityArray.filter(task => task.category.some(category => categoryRightArray.indexOf(category) !== -1));
-        catagoryDeleted = '';
-        return afterTagsArray;
+        if (categoryRightArray.length !== 0) {
+            categoryRightArray.forEach((tag) => {
+                createTagsRight(tag);
+            });
+            const afterTagsArray = afterSortPriorityArray.filter(task => task.category.some(category => categoryRightArray.indexOf(category) !== -1));
+            return afterTagsArray;
+        }
+        else {
+            return afterSortPriorityArray;
+        }
     }
     else {
-        catagoryDeleted = '';
         return afterSortPriorityArray;
     }
     ;
@@ -162,11 +162,11 @@ selectPriorityElementRight.addEventListener('change', (e) => {
 function sortByPriorityFunction(afterCompUncompArray) {
     const priorityValue = selectPriorityElementRight.value;
     if (priorityValue === 'Low-to-high') {
-        afterCompUncompArray.sort((a, b) => a.sortValue - b.sortValue);
+        afterCompUncompArray.sort((a, b) => b.sortValue - a.sortValue);
         return afterCompUncompArray;
     }
     else if (priorityValue === 'High-to-low') {
-        afterAllEditInCard.sort((a, b) => b.sortValue - a.sortValue);
+        afterCompUncompArray.sort((a, b) => a.sortValue - b.sortValue);
         return afterCompUncompArray;
     }
     else {
@@ -277,7 +277,7 @@ function createCards(element) {
     });
     imgContainer.appendChild(deleteIcon);
     singleTaskContainer.appendChild(imgContainer);
-    taskContainerElement.appendChild(singleTaskContainer);
+    taskContainerElement.insertBefore(singleTaskContainer, taskContainerElement.firstChild);
     checkbox.addEventListener('click', () => {
         if (checkbox.checked) {
             heading.classList.add('strikethrough');
@@ -327,8 +327,7 @@ function createTagsRight(tagName) {
         if (indexOfCategory !== -1) {
             categoryRightArray.splice(indexOfCategory, 1);
         }
-        catagoryDeleted = tagName;
-        console.log(categoryRightArray);
+        catagoryDeleted = true;
         runAllFilterTogether();
         tagDiv.remove();
     });
@@ -340,6 +339,21 @@ function runAllFilterTogether() {
     const afterSearchArray = searchTaskFunction();
     const afterCompUncompArray = filterTaskFunction(afterSearchArray);
     const afterSortPriorityArray = sortByPriorityFunction(afterCompUncompArray);
-    const afterCategoryArray = categoryFilterFunction(afterSortPriorityArray);
+    const afterCategoryArray = catagoryDeleted ? afterDeleetetagsCard(afterSortPriorityArray) : categoryFilterFunction(afterSortPriorityArray);
     traverseCardsArray(afterCategoryArray);
+}
+function afterDeleetetagsCard(afterSortPriorityArray) {
+    filterTagContainerRight.innerHTML = '';
+    if (categoryRightArray.length !== 0) {
+        categoryRightArray.forEach((tag) => {
+            createTagsRight(tag);
+        });
+        const afterTagsArray = afterSortPriorityArray.filter(task => task.category.some(category => categoryRightArray.indexOf(category) !== -1));
+        catagoryDeleted = false;
+        return afterTagsArray;
+    }
+    else {
+        catagoryDeleted = false;
+        return afterSortPriorityArray;
+    }
 }
